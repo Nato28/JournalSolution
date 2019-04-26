@@ -1,0 +1,59 @@
+﻿@model JournalVersion.Models.Solution
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>Solution</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SolutionName" class="control-label"></label>
+                <input asp-for="SolutionName" class="form-control" />
+                <span asp-validation-for="SolutionName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SolutionType" class="control-label"></label>
+                <input asp-for="SolutionType" class="form-control" />
+                <span asp-validation-for="SolutionType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SolutionComment" class="control-label"></label>
+                <input asp-for="SolutionComment" class="form-control" />
+                <span asp-validation-for="SolutionComment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SolutionNote" class="control-label"></label>
+                <input asp-for="SolutionNote" class="form-control" />
+                <span asp-validation-for="SolutionNote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SolutionDateStart" class="control-label"></label>
+                <input asp-for="SolutionDateStart" class="form-control" />
+                <span asp-validation-for="SolutionDateStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SolutionDateEnd" class="control-label"></label>
+                <input asp-for="SolutionDateEnd" class="form-control" />
+                <span asp-validation-for="SolutionDateEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

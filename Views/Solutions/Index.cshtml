@@ -1,0 +1,66 @@
+﻿@model IEnumerable<JournalVersion.Models.Solution>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SolutionName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SolutionType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SolutionComment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SolutionNote)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SolutionDateStart)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SolutionDateEnd)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SolutionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SolutionType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SolutionComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SolutionNote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SolutionDateStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SolutionDateEnd)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
